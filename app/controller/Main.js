@@ -86,6 +86,9 @@ Ext.define('Ubibus.controller.Main', {
             },
             "pontodetalhe #btnPontoFavorito": {
             	tap: 'favoritarPonto'
+            },
+            "linhaform #btnLinhaFavorito": {
+            	tap: 'favoritarLinha'
             }
         }
     },
@@ -354,6 +357,16 @@ Ext.define('Ubibus.controller.Main', {
         	id_usuario: 0,
         	tipo: 'P',
         	id_entidade: pontoAtual
+        });
+        favorito.save()
+    },
+    
+    favoritarLinha: function(button, e, options) {
+    	var storeFavoritos = Ext.getStore('favorito');
+        var favorito = Ext.create('model.favorito', {
+        	id_usuario: 0,
+        	tipo: 'L',
+        	id_entidade: numeroPesquisado
         });
         favorito.save()
     },
