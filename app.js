@@ -37,7 +37,7 @@ Ext.application({
         'Menu',
         'Itinerarios',
         'Favoritos',
-        'Feed'
+        'Ocorrencia'
     ],
     views: [
         'Empresa',

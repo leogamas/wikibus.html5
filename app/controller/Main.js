@@ -89,6 +89,9 @@ Ext.define('Ubibus.controller.Main', {
             },
             "linhaform #btnLinhaFavorito": {
             	tap: 'favoritarLinha'
+            },
+            "navhome #btnRefreshFeed" : {
+            	tap: 'refreshFeed'
             }
         }
     },
@@ -639,6 +642,11 @@ Ext.define('Ubibus.controller.Main', {
 
         //Seta o valor do select field (oculto na tela) com o codigo para onibus
         Ext.getCmp('selectOcorrenciaOrigem').setValue(2);
-    }
+    },
+    
+    refreshFeed: function (button, e, options) {
+    	var storeFeed = Ext.getStore('ocorrencia');
+        storeFeed.load(); 	
+	}
 
 });

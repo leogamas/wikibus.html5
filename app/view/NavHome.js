@@ -64,6 +64,16 @@ Ext.define('Ubibus.view.NavHome', {
                     iconCls: 'add',
                     iconMask: true,
                     text: ''
+                },
+                {
+                    xtype: 'button',
+                    align: 'right',
+                    hidden: true,
+                    id: 'btnRefreshFeed',
+                    itemId: 'refreshFeed',
+                    iconCls: 'refresh',
+                    iconMask: true,
+                    text: ''
                 }
             ]
         },

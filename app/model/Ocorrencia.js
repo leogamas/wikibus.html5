@@ -46,7 +46,11 @@ Ext.define('Ubibus.model.Ocorrencia', {
             {
                 name: 'descricao',
                 type: 'string'
-            }
+            },
+            {
+                name: 'nome',
+                type: 'string'
+            },
         ],
         proxy: {
             type: 'rest',
