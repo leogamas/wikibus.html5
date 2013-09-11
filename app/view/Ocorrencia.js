@@ -224,7 +224,7 @@ Ext.define('Ubibus.view.Ocorrencia', {
                 var descricao_ocorrencia = Ext.getCmp('txtDescricaoOcorrencia').getValue()
             	var storeOcorrencia = Ext.getStore('ocorrencia');
                 var ocorrencia = Ext.create('model.ocorrencia', {
-                	id_usuario: 0,
+                	id_usuario: idUsuario,
                 	tipo_entidade: tipo_ent,
                 	id_entidade: id_ent,
                 	tipo: tipo_ocorrencia,
