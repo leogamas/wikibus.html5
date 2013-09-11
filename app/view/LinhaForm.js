@@ -198,7 +198,7 @@ Ext.define('Ubibus.view.LinhaForm', {
     	    url: 'php/favorito/get.php',
     	    method: 'GET',    
     	    params: {
-    	        id_usuario: 0,
+    	        id_usuario: idUsuario,
     	        tipo: 'L',
     	        id_entidade: numeroPesquisado
     	    },

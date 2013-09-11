@@ -244,7 +244,7 @@ Ext.define('Ubibus.view.PontoDetalhe', {
     	    url: 'php/favorito/get.php',
     	    method: 'GET',    
     	    params: {
-    	        id_usuario: 0,
+    	        id_usuario: idUsuario,
     	        tipo: 'P',
     	        id_entidade: pontoAtual
     	    },
