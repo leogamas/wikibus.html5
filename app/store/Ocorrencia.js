@@ -18,7 +18,7 @@ Ext.define('Ubibus.store.Ocorrencia', {
         proxy: {
             type: 'ajax',
             api: {
-                read: 'php/ocorrencia/get.php?id_usuario=0',
+                read: 'php/ocorrencia/get.php',
             },
             reader: {
                 type: 'json',

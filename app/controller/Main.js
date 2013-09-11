@@ -104,6 +104,19 @@ Ext.define('Ubibus.controller.Main', {
     	Ext.getCmp('usuarioPort').setDisabled(true);
     	Ext.getCmp('homePort').setDisabled(false);
     	Ext.getCmp('ocorrenciaPort').setDisabled(false);
+        var emailText = Ext.getCmp('txtUsuarioEmail').getValue();
+        var senhaText = Ext.getCmp('txtUsuarioSenha').getValue();
+        Ext.Ajax.request({
+            url: 'php/usuario/logar.php',
+            method: 'POST',
+            params: {
+                email: emailText,
+                senha: senhaText
+            },
+            callback: function(options, success, response) {
+                idUsuario = response.responseText;
+            }
+        });
     },
     
     logout: function(button, e, options) {
@@ -357,7 +370,7 @@ Ext.define('Ubibus.controller.Main', {
     favoritarPonto: function(button, e, options) {
         var storeFavoritos = Ext.getStore('favorito');
         var favorito = Ext.create('model.favorito', {
-        	id_usuario: 0,
+        	id_usuario: idUsuario,
         	tipo: 'P',
         	id_entidade: pontoAtual
         });
@@ -367,7 +380,7 @@ Ext.define('Ubibus.controller.Main', {
     favoritarLinha: function(button, e, options) {
     	var storeFavoritos = Ext.getStore('favorito');
         var favorito = Ext.create('model.favorito', {
-        	id_usuario: 0,
+        	id_usuario: idUsuario,
         	tipo: 'L',
         	id_entidade: numeroPesquisado
         });
@@ -646,6 +659,7 @@ Ext.define('Ubibus.controller.Main', {
     
     refreshFeed: function (button, e, options) {
     	var storeFeed = Ext.getStore('ocorrencia');
+        storeFeed.getProxy().setExtraParam('id_usuario', idUsuario);
         storeFeed.load(); 	
 	}
 
