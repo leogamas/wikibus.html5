@@ -9,6 +9,8 @@
   $pontos = array();
   $linhas = array();
   
+  array_push($linhas, -1);
+  array_push($pontos, -1);
 
   while($fav = mysql_fetch_assoc($rs)) {
     if ($fav['tipo'] == 'P') {
